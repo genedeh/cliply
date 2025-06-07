@@ -9,7 +9,7 @@ const user = {}
 
 const Navbar = () => {
     return (
-        <header className="w-full h-20 justify-between ">
+        <header className="w-full justify-between ">
             <nav className='flex justify-between items-center'>
                 <Link href='/' className='flex items-center gap-3 no-underline'>
                     <Image src={Logo} alt="Logo" width={60} height={60} />
