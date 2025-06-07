@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --color-primary-100: #2a63ff;
   --color-primary-200: #1749d1;
@@ -27,11 +28,6 @@
   --radius-full: 9999px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
   background-color: var(--color-light-200);
@@ -51,4 +47,15 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
+}
+
+
+@layer components {
+  .wrapper {
+    @apply max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .page{
+    @apply flex flex-col min-h-screen pt-12.5 pb-20 gap-9;
+  }
 }

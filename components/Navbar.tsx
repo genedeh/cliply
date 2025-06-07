@@ -18,7 +18,7 @@ const Navbar = () => {
                 {user &&
                     (
                         <figure className='flex justify-around gap-[10px] px-5 items-center'>
-                            <button>
+                            <button className='cursor-pointer'>
                                 <Image src={DummyImage} alt="User" width={66} height={66} className='rounded-full aspect-square' />
                             </button>
                             <button className='cursor-pointer'>
