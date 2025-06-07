@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 import { Karla } from "next/font/google";
 import "./globals.css";
+import { satoshi } from "../fonts/font";
 
 const geistKarla = Karla({
   variable: "--font-geist-karla",
   subsets: ["latin"],
 });
 
-
 export const metadata: Metadata = {
   title: "Clipy",
   description: "“Capture. Clip. Share.”",
   icons: {
-    icon: "",
-  }
+    icon: "/assets/icons/logo.svg",
+  },
 };
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistKarla.variable} font-karla antialiased`}
+        className={`${geistKarla.variable} ${satoshi.variable} font-karla antialiased`}
       >
         {children}
       </body>
