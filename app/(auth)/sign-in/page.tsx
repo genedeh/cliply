@@ -1,8 +1,21 @@
+'use client';
+import { supabase } from '@/lib/supabaseClient';
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 const Page = () => {
+  const handleGoogleSignIn = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+    })
+
+    if (error) {
+      console.error('Google OAuth error:', error.message)
+    } else {
+      console.log('Redirecting to Google...')
+    }
+  }
   return (
     <main className="sign-in">
       <aside className="testimonial">
@@ -41,13 +54,13 @@ const Page = () => {
             <h1>Clipy</h1>
           </Link>
           <p>Create and share your very first <span>Clipy video</span> in no time!</p>
-          <button>
+          <button onClick={() => { handleGoogleSignIn() }}>
             <Image src="/assets/icons/google.svg" alt='google' width={22} height={22} />
             <span>Sign in with Google</span>
           </button>
         </section>
       </aside>
-      <div className='overlay'/>
+      <div className='overlay' />
     </main>
   )
 }
